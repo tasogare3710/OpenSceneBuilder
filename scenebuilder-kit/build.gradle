@@ -1,0 +1,39 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+String platformName;
+String platformNameRaw = System.getProperty('os.name').toLowerCase();
+if(platformNameRaw.contains("windows")) {
+    platformName = "win"
+} else if(platformNameRaw.contains("linux")){
+    platformName = "linux"
+} else if(platformNameRaw.contains("mac")){
+    platformName = "mac"
+}else {
+    platformName = ""
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.1'
+
+    implementation "org.openjfx:javafx-base:16:${platformName}"
+    implementation "org.openjfx:javafx-fxml:16:${platformName}"
+    implementation "org.openjfx:javafx-controls:16:${platformName}"
+    implementation "org.openjfx:javafx-graphics:16:${platformName}"
+    implementation "org.openjfx:javafx-web:16:${platformName}"
+    implementation "org.openjfx:javafx-media:16:${platformName}"
+    implementation "org.openjfx:javafx-swing:16:${platformName}"
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
