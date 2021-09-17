@@ -1,9 +1,6 @@
 plugins {
     id 'java-library'
-}
-
-repositories {
-    mavenCentral()
+    id 'OpenSceneBuilder.java-conventions'
 }
 
 String platformName;
@@ -18,22 +15,15 @@ if(platformNameRaw.contains("windows")) {
     platformName = ""
 }
 
+def openJfxVersion = "17.0.0.1"
+
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.1'
-
-    implementation "org.openjfx:javafx-base:16:${platformName}"
-    implementation "org.openjfx:javafx-fxml:16:${platformName}"
-    implementation "org.openjfx:javafx-controls:16:${platformName}"
-    implementation "org.openjfx:javafx-graphics:16:${platformName}"
-    implementation "org.openjfx:javafx-web:16:${platformName}"
-    implementation "org.openjfx:javafx-media:16:${platformName}"
-    implementation "org.openjfx:javafx-swing:16:${platformName}"
+    implementation "org.openjfx:javafx-base:${openJfxVersion}:${platformName}"
+    implementation "org.openjfx:javafx-fxml:${openJfxVersion}:${platformName}"
+    implementation "org.openjfx:javafx-controls:${openJfxVersion}:${platformName}"
+    implementation "org.openjfx:javafx-graphics:${openJfxVersion}:${platformName}"
+    implementation "org.openjfx:javafx-web:${openJfxVersion}:${platformName}"
+    implementation "org.openjfx:javafx-media:${openJfxVersion}:${platformName}"
+    implementation "org.openjfx:javafx-swing:${openJfxVersion}:${platformName}"
 }
 
-tasks.withType(JavaCompile) {
-    options.encoding = "UTF-8"
-}
-
-tasks.named('test') {
-    useJUnitPlatform()
-}
