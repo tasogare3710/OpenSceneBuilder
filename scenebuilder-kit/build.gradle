@@ -15,7 +15,7 @@ if(platformNameRaw.contains("windows")) {
     platformName = ""
 }
 
-def openJfxVersion = "17.0.0.1"
+def openJfxVersion = "17.0.2"
 
 dependencies {
     implementation "org.openjfx:javafx-base:${openJfxVersion}:${platformName}"
