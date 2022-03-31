@@ -125,13 +125,7 @@ class LibraryListCell extends ListCell<LibraryListItem> {
         if (!empty && item != null) {
             updateLayout(item);
             if (item.getLibItem() != null) {
-                // A qualifier needed to discriminate items is kept in the ID:
-                // this applies to orientation as well as empty qualifiers.
-                // FX8 qualifier is not kept as there's no ambiguity there.
                 String id = item.getLibItem().getName();
-                if (id.contains(BuiltinLibrary.getFX8Qualifier())) {
-                    id = id.substring(0, id.indexOf(BuiltinLibrary.getFX8Qualifier()));
-                }
                 // If QE were about to test a localized version the ID should
                 // remain unchanged.
                 if (id.contains(BuiltinLibrary.getEmptyQualifier())) {
