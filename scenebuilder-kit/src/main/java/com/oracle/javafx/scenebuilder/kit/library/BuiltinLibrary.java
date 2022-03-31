@@ -246,6 +246,7 @@ public class BuiltinLibrary extends Library {
         addDefaultItem(javafx.scene.ParallelCamera.class, TAG_3D);
         addDefaultItem(javafx.scene.PerspectiveCamera.class, TAG_3D);
         addCustomizedItem(javafx.scene.PointLight.class, TAG_3D);
+        addCustomizedItem(javafx.scene.SpotLight.class, TAG_3D);
     }
 
 

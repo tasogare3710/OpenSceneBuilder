@@ -306,6 +306,8 @@ public class Metadata {
             new ComponentClassMetadata(javafx.scene.PerspectiveCamera.class, CameraMetadata);
     private final ComponentClassMetadata PointLightMetadata =
             new ComponentClassMetadata(javafx.scene.PointLight.class, LightBaseMetadata);
+    private final ComponentClassMetadata SpotLightMetadata =
+            new ComponentClassMetadata(javafx.scene.SpotLight.class, PointLightMetadata);
     private final ComponentClassMetadata SubSceneMetadata =
             new ComponentClassMetadata(javafx.scene.SubScene.class, NodeMetadata);
     private final ComponentClassMetadata CanvasMetadata =
@@ -4692,6 +4694,7 @@ public class Metadata {
         componentClassMap.put(PerspectiveCameraMetadata.getKlass(), PerspectiveCameraMetadata);
         componentClassMap.put(PieChartMetadata.getKlass(), PieChartMetadata);
         componentClassMap.put(PointLightMetadata.getKlass(), PointLightMetadata);
+        componentClassMap.put(SpotLightMetadata.getKlass(), SpotLightMetadata);
         componentClassMap.put(PolygonMetadata.getKlass(), PolygonMetadata);
         componentClassMap.put(PolylineMetadata.getKlass(), PolylineMetadata);
         componentClassMap.put(PopupControlMetadata.getKlass(), PopupControlMetadata);
@@ -5289,6 +5292,9 @@ public class Metadata {
 
         PointLightMetadata.getProperties().add(accessibleRole_NODE_PropertyMetadata);
         PointLightMetadata.getProperties().add(pickOnBounds_false_PropertyMetadata);
+
+        SpotLightMetadata.getProperties().add(accessibleRole_NODE_PropertyMetadata);
+        SpotLightMetadata.getProperties().add(pickOnBounds_false_PropertyMetadata);
 
         PolygonMetadata.getProperties().add(accessibleRole_NODE_PropertyMetadata);
         PolygonMetadata.getProperties().add(pickOnBounds_false_PropertyMetadata);
