@@ -5523,6 +5523,7 @@ public class Metadata {
         SubSceneMetadata.getProperties().add(height_Double_0_PropertyMetadata);
         SubSceneMetadata.getProperties().add(pickOnBounds_false_PropertyMetadata);
         SubSceneMetadata.getProperties().add(width_Double_0_PropertyMetadata);
+        SubSceneMetadata.getProperties().add(userAgentStylesheetPropertyMetadata);
 
         SwingNodeMetadata.getProperties().add(accessibleRole_NODE_PropertyMetadata);
         SwingNodeMetadata.getProperties().add(focusTraversable_true_PropertyMetadata);
